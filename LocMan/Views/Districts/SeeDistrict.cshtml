@@ -1,0 +1,90 @@
+﻿@model IEnumerable<LocMan.Models.District>
+
+@{
+    ViewData["Title"] = "SeeDistrict";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictPopulation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictDigitalAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictIncorporatedOn)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.DistrictCreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictUpdatedOn)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.DistrictIsActive)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.DistrictCreatedByNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DistrictUpdatedByNavigation)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictPopulation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictDigitalAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictIncorporatedOn)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.DistrictCreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictUpdatedOn)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.DistrictIsActive)
+                </td>*@
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.DistrictCreatedByNavigation.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistrictUpdatedByNavigation.FirstName)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region.RegionName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DistrictId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.DistrictId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.DistrictId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

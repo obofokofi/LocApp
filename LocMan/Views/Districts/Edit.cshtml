@@ -1,0 +1,79 @@
+﻿@model LocMan.Models.District
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>District</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DistrictId" />
+            <div class="form-group">
+                <label asp-for="DistrictName" class="control-label"></label>
+                <input asp-for="DistrictName" class="form-control" />
+                <span asp-validation-for="DistrictName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictPopulation" class="control-label"></label>
+                <input asp-for="DistrictPopulation" class="form-control" />
+                <span asp-validation-for="DistrictPopulation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictDigitalAddress" class="control-label"></label>
+                <input asp-for="DistrictDigitalAddress" class="form-control" />
+                <span asp-validation-for="DistrictDigitalAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictIncorporatedOn" class="control-label"></label>
+                <input asp-for="DistrictIncorporatedOn" class="form-control" />
+                <span asp-validation-for="DistrictIncorporatedOn" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="DistrictCreatedOn" class="control-label"></label>
+                <input asp-for="DistrictCreatedOn" class="form-control" />
+                <span asp-validation-for="DistrictCreatedOn" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="DistrictUpdatedOn" class="control-label"></label>
+                <input asp-for="DistrictUpdatedOn" class="form-control" />
+                <span asp-validation-for="DistrictUpdatedOn" class="text-danger"></span>
+            </div>*@
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="DistrictIsActive" /> @Html.DisplayNameFor(model => model.DistrictIsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegionId" class="control-label">Region</label>
+                <select asp-for="RegionId" class="form-control" asp-items="ViewBag.RegionId"></select>
+                <span asp-validation-for="RegionId" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="DistrictCreatedBy" class="control-label"></label>
+                <select asp-for="DistrictCreatedBy" class="form-control" asp-items="ViewBag.DistrictCreatedBy"></select>
+                <span asp-validation-for="DistrictCreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DistrictUpdatedBy" class="control-label"></label>
+                <select asp-for="DistrictUpdatedBy" class="form-control" asp-items="ViewBag.DistrictUpdatedBy"></select>
+                <span asp-validation-for="DistrictUpdatedBy" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="SeeDistrict">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,78 @@
+﻿@model LocMan.Models.District
+
+@{
+    ViewData["Title"] = "District|Details";
+}
+
+<h1>District|Details</h1>
+
+<div>
+    <h4>See the districts in detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictPopulation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictPopulation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictDigitalAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictDigitalAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictIncorporatedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictIncorporatedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Region.RegionName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictCreatedByNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictCreatedByNavigation.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictCreatedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictCreatedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictUpdatedByNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdateName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictUpdatedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DistrictUpdatedOn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictIsActive)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DistrictId">Edit</a> |
+    <a asp-action="SeeDistrict">View All Districts</a>
+</div>
